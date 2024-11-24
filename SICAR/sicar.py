@@ -111,7 +111,7 @@ class Sicar(Url):
         Returns:
             None
         """
-        self._session = httpx.Client(verify=False)
+        self._session = httpx.Client(verify=False, timeout=200)
         self._session.headers.update(
             headers
             if isinstance(headers, dict)
